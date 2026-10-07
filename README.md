@@ -63,6 +63,7 @@ The only write operation is the POST that creates an accepted risk, and it requi
 ## Good to know
 
 - One rule is created per CVE, not per package -- the plan always shows the real total first.
+- Source, image and package are only used to find and select the CVEs. With **Global** or **Image** scope, the exceptions are created under the scope you choose, regardless of the source, image or package the CVEs came from. With **Package** scope, each rule is also restricted to the package it was selected from.
 - Existing accepted risks are checked first, so re-running after a partial failure is safe (duplicates are skipped, not recreated).
 - On-prem with an internal CA: add `--ca-bundle /path/to/ca.pem`. Behind a proxy: `--proxy`.
 
